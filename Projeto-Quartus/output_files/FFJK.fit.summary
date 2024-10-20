@@ -1,0 +1,11 @@
+Fitter Status : Successful - Sun Oct 20 01:52:19 2024
+Quartus Prime Version : 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+Revision Name : FFJK
+Top-level Entity Name : dis7segdecspd
+Family : MAX II
+Device : EPM240T100C5
+Timing Models : Final
+Total logic elements : 3 / 240 ( 1 % )
+Total pins : 7 / 80 ( 9 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )

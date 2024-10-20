@@ -1,0 +1,14 @@
+|dis7segdecspd
+A => and_ade.IN0
+A => and_cf.IN0
+A => and_g.IN0
+B => and_cf.IN1
+B => and_ade.IN1
+B => and_g.IN1
+F_ade <= and_ade.DB_MAX_OUTPUT_PORT_TYPE
+F_cf <= and_cf.DB_MAX_OUTPUT_PORT_TYPE
+F_b <= <GND>
+F_g <= and_g.DB_MAX_OUTPUT_PORT_TYPE
+F_p <= <VCC>
+
+
