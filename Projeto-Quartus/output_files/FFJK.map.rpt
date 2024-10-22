@@ -1,5 +1,5 @@
 Analysis & Synthesis report for FFJK
-Mon Oct 21 22:15:12 2024
+Tue Oct 22 01:20:22 2024
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -46,7 +46,7 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                 ;
 +-----------------------------+------------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Mon Oct 21 22:15:12 2024          ;
+; Analysis & Synthesis Status ; Successful - Tue Oct 22 01:20:22 2024          ;
 ; Quartus Prime Version       ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name               ; FFJK                                           ;
 ; Top-level Entity Name       ; display                                        ;
@@ -275,7 +275,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Mon Oct 21 22:15:07 2024
+    Info: Processing started: Tue Oct 22 01:20:16 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off FFJK -c FFJK
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
@@ -305,8 +305,8 @@ Info (21057): Implemented 4 device resources after synthesis - the final resourc
     Info (21059): Implemented 2 output pins
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
     Info: Peak virtual memory: 4706 megabytes
-    Info: Processing ended: Mon Oct 21 22:15:12 2024
-    Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:07
+    Info: Processing ended: Tue Oct 22 01:20:22 2024
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:08
 
 

@@ -1,6 +1,6 @@
 module display (
 	input Digit1, Digit4,
-	output active_digit, active_digit_not
+	output active_digit, active_digit_not, A, B, C, D, E, F, G
 );
 
 	wire clk_out;

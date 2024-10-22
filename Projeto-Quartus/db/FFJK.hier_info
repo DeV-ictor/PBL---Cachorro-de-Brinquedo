@@ -1,8 +1,8 @@
 |display
 Digit1 => Digit1.IN1
 Digit4 => Digit4.IN1
-active_digit <= mux_4x1:mux_digit_inst.out
-active_digit_not <= mux_4x1:mux_digit_inst.out
+active_digit << mux_4x1:mux_digit_inst.out
+active_digit_not << mux_4x1:mux_digit_inst.out
 
 
 |display|clockdivisor:clkdiv_inst
