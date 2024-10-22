@@ -1,0 +1,26 @@
+module mux_4x1 (
+    input [1:0] sel, // Seletores de entrada (2 bits)
+    input [3:0] in,  // 4 entradas de dados
+    output out        // Saída do MUX
+);
+
+    // Gerando os sinais de seleção para as portas AND
+    wire sel0, sel1, sel2, sel3;
+    not #(1) not_sel0 (sel0, sel[0]);
+    not #(1) not_sel1 (sel1, sel[1]);
+    and #(1) and_sel00 (sel00, not_sel0, not_sel1); // sel == 2'b00
+    and #(1) and_sel01 (sel01, not_sel0, sel1);   // sel == 2'b01
+    and #(1) and_sel10 (sel10, sel0, not_sel1);   // sel == 2'b10
+    and #(1) and_sel11 (sel11, sel0, sel1);      // sel == 2'b11
+
+    // Passando as entradas através das portas AND
+    wire out0, out1, out2, out3;
+    and #(1) and_gate0 (out0, in[0], sel00);
+    and #(1) and_gate1 (out1, in[1], sel01);
+    and #(1) and_gate2 (out2, in[2], sel10);
+    and #(1) and_gate3 (out3, in[3], sel11);
+
+    // Combinando as saídas das portas AND com uma porta OR
+    or #(1) or_gate (out, out0, out1, out2, out3);
+
+endmodule

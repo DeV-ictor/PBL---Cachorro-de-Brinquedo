@@ -1,5 +1,5 @@
 Analysis & Synthesis report for FFJK
-Sun Oct 20 01:52:17 2024
+Mon Oct 21 22:15:12 2024
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -13,8 +13,13 @@ Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Analysis & Synthesis Messages
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Port Connectivity Checks: "mux_4x1_spd:mux_1_inst|dis7segdecspd:dis_spd_inst"
+ 11. Port Connectivity Checks: "mux_4x1_spd:mux_1_inst|dis7segdec:dis_act_inst"
+ 12. Port Connectivity Checks: "mux_4x1_spd:mux_1_inst"
+ 13. Port Connectivity Checks: "clockdivisor:clkdiv_inst"
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -41,13 +46,13 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                 ;
 +-----------------------------+------------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Sun Oct 20 01:52:17 2024          ;
+; Analysis & Synthesis Status ; Successful - Mon Oct 21 22:15:12 2024          ;
 ; Quartus Prime Version       ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name               ; FFJK                                           ;
-; Top-level Entity Name       ; dis7segdecspd                                  ;
+; Top-level Entity Name       ; display                                        ;
 ; Family                      ; MAX II                                         ;
-; Total logic elements        ; 3                                              ;
-; Total pins                  ; 7                                              ;
+; Total logic elements        ; 0                                              ;
+; Total pins                  ; 4                                              ;
 ; Total virtual pins          ; 0                                              ;
 ; UFM blocks                  ; 0 / 1 ( 0 % )                                  ;
 +-----------------------------+------------------------------------------------+
@@ -59,7 +64,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; EPM240T100C5       ;                    ;
-; Top-level entity name                                            ; dis7segdecspd      ; FFJK               ;
+; Top-level entity name                                            ; display            ; FFJK               ;
 ; Family name                                                      ; MAX II             ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -140,57 +145,73 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                              ;
-+----------------------------------+-----------------+------------------------+---------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                                ; Library ;
-+----------------------------------+-----------------+------------------------+---------------------------------------------------------------------------------------------+---------+
-; dis7segdecspd.v                  ; yes             ; User Verilog HDL File  ; C:/Users/Fredi/OneDrive/Documentos/MI - Projeto de Circuitos Digitais/PBL_2/dis7segdecspd.v ;         ;
-+----------------------------------+-----------------+------------------------+---------------------------------------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                          ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                                                                            ; Library ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+---------+
+; clockdivisor.v                   ; yes             ; User Verilog HDL File  ; C:/Users/Fredi/OneDrive/Documentos/MI - Projeto de Circuitos Digitais/PBL_2/PBL---Cachorro-de-Brinquedo/Projeto-Quartus/clockdivisor.v  ;         ;
+; dis7segdec.v                     ; yes             ; User Verilog HDL File  ; C:/Users/Fredi/OneDrive/Documentos/MI - Projeto de Circuitos Digitais/PBL_2/PBL---Cachorro-de-Brinquedo/Projeto-Quartus/dis7segdec.v    ;         ;
+; dis7segdecspd.v                  ; yes             ; User Verilog HDL File  ; C:/Users/Fredi/OneDrive/Documentos/MI - Projeto de Circuitos Digitais/PBL_2/PBL---Cachorro-de-Brinquedo/Projeto-Quartus/dis7segdecspd.v ;         ;
+; display.v                        ; yes             ; User Verilog HDL File  ; C:/Users/Fredi/OneDrive/Documentos/MI - Projeto de Circuitos Digitais/PBL_2/PBL---Cachorro-de-Brinquedo/Projeto-Quartus/display.v       ;         ;
+; mux_4x1.v                        ; yes             ; User Verilog HDL File  ; C:/Users/Fredi/OneDrive/Documentos/MI - Projeto de Circuitos Digitais/PBL_2/PBL---Cachorro-de-Brinquedo/Projeto-Quartus/mux_4x1.v       ;         ;
+; mux_4x1_spd.v                    ; yes             ; User Verilog HDL File  ; C:/Users/Fredi/OneDrive/Documentos/MI - Projeto de Circuitos Digitais/PBL_2/PBL---Cachorro-de-Brinquedo/Projeto-Quartus/mux_4x1_spd.v   ;         ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary         ;
-+---------------------------------------------+-------+
-; Resource                                    ; Usage ;
-+---------------------------------------------+-------+
-; Total logic elements                        ; 3     ;
-;     -- Combinational with no register       ; 3     ;
-;     -- Register only                        ; 0     ;
-;     -- Combinational with a register        ; 0     ;
-;                                             ;       ;
-; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 0     ;
-;     -- 3 input functions                    ; 0     ;
-;     -- 2 input functions                    ; 3     ;
-;     -- 1 input functions                    ; 0     ;
-;     -- 0 input functions                    ; 0     ;
-;                                             ;       ;
-; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 3     ;
-;     -- arithmetic mode                      ; 0     ;
-;     -- qfbk mode                            ; 0     ;
-;     -- register cascade mode                ; 0     ;
-;     -- synchronous clear/load mode          ; 0     ;
-;     -- asynchronous clear/load mode         ; 0     ;
-;                                             ;       ;
-; Total registers                             ; 0     ;
-; I/O pins                                    ; 7     ;
-; Maximum fan-out node                        ; A     ;
-; Maximum fan-out                             ; 3     ;
-; Total fan-out                               ; 9     ;
-; Average fan-out                             ; 0.90  ;
-+---------------------------------------------+-------+
++------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary          ;
++---------------------------------------------+--------+
+; Resource                                    ; Usage  ;
++---------------------------------------------+--------+
+; Total logic elements                        ; 0      ;
+;     -- Combinational with no register       ; 0      ;
+;     -- Register only                        ; 0      ;
+;     -- Combinational with a register        ; 0      ;
+;                                             ;        ;
+; Logic element usage by number of LUT inputs ;        ;
+;     -- 4 input functions                    ; 0      ;
+;     -- 3 input functions                    ; 0      ;
+;     -- 2 input functions                    ; 0      ;
+;     -- 1 input functions                    ; 0      ;
+;     -- 0 input functions                    ; 0      ;
+;                                             ;        ;
+; Logic elements by mode                      ;        ;
+;     -- normal mode                          ; 0      ;
+;     -- arithmetic mode                      ; 0      ;
+;     -- qfbk mode                            ; 0      ;
+;     -- register cascade mode                ; 0      ;
+;     -- synchronous clear/load mode          ; 0      ;
+;     -- asynchronous clear/load mode         ; 0      ;
+;                                             ;        ;
+; Total registers                             ; 0      ;
+; I/O pins                                    ; 4      ;
+; Maximum fan-out node                        ; Digit1 ;
+; Maximum fan-out                             ; 2      ;
+; Total fan-out                               ; 2      ;
+; Average fan-out                             ; 0.50   ;
++---------------------------------------------+--------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                  ;
-+----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+---------------+--------------+
-; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name ; Entity Name   ; Library Name ;
-+----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+---------------+--------------+
-; |dis7segdecspd             ; 3 (3)       ; 0            ; 0          ; 7    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |dis7segdecspd      ; dis7segdecspd ; work         ;
-+----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+---------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+-------------+--------------+
+; |display                   ; 0 (0)       ; 0            ; 0          ; 4    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |display            ; display     ; work         ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                           ;
++---------------------------------------+--------------------------------------+
+; Register name                         ; Reason for Removal                   ;
++---------------------------------------+--------------------------------------+
+; clockdivisor:clkdiv_inst|clk_out      ; Stuck at GND due to stuck port clock ;
+; clockdivisor:clkdiv_inst|count[0..4]  ; Stuck at GND due to stuck port clock ;
+; Total Number of Removed Registers = 6 ;                                      ;
++---------------------------------------+--------------------------------------+
 
 
 +------------------------------------------------------+
@@ -208,34 +229,84 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "mux_4x1_spd:mux_1_inst|dis7segdecspd:dis_spd_inst"                                                                                          ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                      ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; A    ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; B    ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "mux_4x1_spd:mux_1_inst|dis7segdec:dis_act_inst"                                                                                             ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                      ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; A    ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; B    ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; C    ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "mux_4x1_spd:mux_1_inst"                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; out  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "clockdivisor:clkdiv_inst"                                                                                                                    ;
++-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                                                                                                      ;
++-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; clk   ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; reset ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Sun Oct 20 01:52:11 2024
+    Info: Processing started: Mon Oct 21 22:15:07 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off FFJK -c FFJK
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file clockdivisor.v
-    Info (12023): Found entity 1: clockdivisor File: C:/Users/Fredi/OneDrive/Documentos/MI - Projeto de Circuitos Digitais/PBL_2/clockdivisor.v Line: 1
+    Info (12023): Found entity 1: clockdivisor File: C:/Users/Fredi/OneDrive/Documentos/MI - Projeto de Circuitos Digitais/PBL_2/PBL---Cachorro-de-Brinquedo/Projeto-Quartus/clockdivisor.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file dis7segdec.v
-    Info (12023): Found entity 1: dis7segdec File: C:/Users/Fredi/OneDrive/Documentos/MI - Projeto de Circuitos Digitais/PBL_2/dis7segdec.v Line: 1
+    Info (12023): Found entity 1: dis7segdec File: C:/Users/Fredi/OneDrive/Documentos/MI - Projeto de Circuitos Digitais/PBL_2/PBL---Cachorro-de-Brinquedo/Projeto-Quartus/dis7segdec.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file dis7segdecspd.v
-    Info (12023): Found entity 1: dis7segdecspd File: C:/Users/Fredi/OneDrive/Documentos/MI - Projeto de Circuitos Digitais/PBL_2/dis7segdecspd.v Line: 1
-Info (12127): Elaborating entity "dis7segdecspd" for the top level hierarchy
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "F_b" is stuck at GND File: C:/Users/Fredi/OneDrive/Documentos/MI - Projeto de Circuitos Digitais/PBL_2/dis7segdecspd.v Line: 3
-    Warning (13410): Pin "F_p" is stuck at VCC File: C:/Users/Fredi/OneDrive/Documentos/MI - Projeto de Circuitos Digitais/PBL_2/dis7segdecspd.v Line: 4
-Info (21057): Implemented 10 device resources after synthesis - the final resource count might be different
+    Info (12023): Found entity 1: dis7segdecspd File: C:/Users/Fredi/OneDrive/Documentos/MI - Projeto de Circuitos Digitais/PBL_2/PBL---Cachorro-de-Brinquedo/Projeto-Quartus/dis7segdecspd.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file display.v
+    Info (12023): Found entity 1: display File: C:/Users/Fredi/OneDrive/Documentos/MI - Projeto de Circuitos Digitais/PBL_2/PBL---Cachorro-de-Brinquedo/Projeto-Quartus/display.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mux_4x1.v
+    Info (12023): Found entity 1: mux_4x1 File: C:/Users/Fredi/OneDrive/Documentos/MI - Projeto de Circuitos Digitais/PBL_2/PBL---Cachorro-de-Brinquedo/Projeto-Quartus/mux_4x1.v Line: 8
+Info (12021): Found 1 design units, including 1 entities, in source file mux_4x1_spd.v
+    Info (12023): Found entity 1: mux_4x1_spd File: C:/Users/Fredi/OneDrive/Documentos/MI - Projeto de Circuitos Digitais/PBL_2/PBL---Cachorro-de-Brinquedo/Projeto-Quartus/mux_4x1_spd.v Line: 8
+Info (12127): Elaborating entity "display" for the top level hierarchy
+Info (12128): Elaborating entity "clockdivisor" for hierarchy "clockdivisor:clkdiv_inst" File: C:/Users/Fredi/OneDrive/Documentos/MI - Projeto de Circuitos Digitais/PBL_2/PBL---Cachorro-de-Brinquedo/Projeto-Quartus/display.v Line: 10
+Info (12128): Elaborating entity "mux_4x1_spd" for hierarchy "mux_4x1_spd:mux_1_inst" File: C:/Users/Fredi/OneDrive/Documentos/MI - Projeto de Circuitos Digitais/PBL_2/PBL---Cachorro-de-Brinquedo/Projeto-Quartus/display.v Line: 14
+Info (12128): Elaborating entity "dis7segdec" for hierarchy "mux_4x1_spd:mux_1_inst|dis7segdec:dis_act_inst" File: C:/Users/Fredi/OneDrive/Documentos/MI - Projeto de Circuitos Digitais/PBL_2/PBL---Cachorro-de-Brinquedo/Projeto-Quartus/mux_4x1_spd.v Line: 60
+Info (12128): Elaborating entity "dis7segdecspd" for hierarchy "mux_4x1_spd:mux_1_inst|dis7segdecspd:dis_spd_inst" File: C:/Users/Fredi/OneDrive/Documentos/MI - Projeto de Circuitos Digitais/PBL_2/PBL---Cachorro-de-Brinquedo/Projeto-Quartus/mux_4x1_spd.v Line: 70
+Info (12128): Elaborating entity "mux_4x1" for hierarchy "mux_4x1:mux_digit_inst" File: C:/Users/Fredi/OneDrive/Documentos/MI - Projeto de Circuitos Digitais/PBL_2/PBL---Cachorro-de-Brinquedo/Projeto-Quartus/display.v Line: 21
+Warning (12241): 4 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "Digit4" File: C:/Users/Fredi/OneDrive/Documentos/MI - Projeto de Circuitos Digitais/PBL_2/PBL---Cachorro-de-Brinquedo/Projeto-Quartus/display.v Line: 2
+Info (21057): Implemented 4 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
-    Info (21059): Implemented 5 output pins
-    Info (21061): Implemented 3 logic cells
+    Info (21059): Implemented 2 output pins
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 4717 megabytes
-    Info: Processing ended: Sun Oct 20 01:52:17 2024
-    Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:08
+    Info: Peak virtual memory: 4706 megabytes
+    Info: Processing ended: Mon Oct 21 22:15:12 2024
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:07
 
 

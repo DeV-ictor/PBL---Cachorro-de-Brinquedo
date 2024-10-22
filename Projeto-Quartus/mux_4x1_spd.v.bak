@@ -1,0 +1,7 @@
+module mux_4x1_spd (
+	 input sel,        // Seletor de entrada
+    input [6:0] in0, in1, 
+    output [6:0] out   // Saída do MUX
+);
+
+endmodule

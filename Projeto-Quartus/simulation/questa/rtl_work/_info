@@ -1,0 +1,64 @@
+m255
+K4
+z2
+!s12c _opt1
+Z0 !s99 nomlopt
+!s12c _opt
+R0
+!s11f vlog 2023.3 2023.07, Jul 17 2023
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dC:/Users/Fredi/OneDrive/Documentos/MI - Projeto de Circuitos Digitais/PBL_2/PBL---Cachorro-de-Brinquedo/Projeto-Quartus/simulation/questa
+T_opt
+!s110 1729549839
+V8=`3_0eH6SA9fj4YjhUF_2
+Z2 04 7 4 work mux_4x1 fast 0
+=1-706979a0bdb8-6716d60f-4a-22f8
+R0
+Z3 !s12b OEM100
+Z4 !s124 OEM10U1 
+o-quiet -auto_acc_if_foreign -work work
+Z5 tCvgOpt 0
+n@_opt
+Z6 OL;O;2023.3;77
+R1
+T_opt1
+!s110 1729550011
+VR64Aj]f^=3VJmmc7e=DDO0
+R2
+=1-706979a0bdb8-6716d6bb-264-15fc
+R0
+R3
+R4
+o-quiet -auto_acc_if_foreign -work work +acc
+R5
+n@_opt1
+R6
+vmux_4x1
+2C:/Users/Fredi/OneDrive/Documentos/MI - Projeto de Circuitos Digitais/PBL_2/PBL---Cachorro-de-Brinquedo/Projeto-Quartus/mux_4x1.v
+!s110 1729549734
+!i10b 1
+!s100 cSFh00C[mWYf^D=?7HlBF3
+I1IDcMO^YR[IYN:MN>GGEL1
+R1
+w1729549595
+8C:/Users/Fredi/OneDrive/Documentos/MI - Projeto de Circuitos Digitais/PBL_2/PBL---Cachorro-de-Brinquedo/Projeto-Quartus/mux_4x1.v
+FC:/Users/Fredi/OneDrive/Documentos/MI - Projeto de Circuitos Digitais/PBL_2/PBL---Cachorro-de-Brinquedo/Projeto-Quartus/mux_4x1.v
+!i122 0
+L0 1 34
+VDg1SIo80bB@j0V0VzS_@n1
+OL;L;2023.3;77
+r1
+!s85 0
+31
+!s108 1729549734.000000
+!s107 C:/Users/Fredi/OneDrive/Documentos/MI - Projeto de Circuitos Digitais/PBL_2/PBL---Cachorro-de-Brinquedo/Projeto-Quartus/mux_4x1.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Fredi/OneDrive/Documentos/MI - Projeto de Circuitos Digitais/PBL_2/PBL---Cachorro-de-Brinquedo/Projeto-Quartus|C:/Users/Fredi/OneDrive/Documentos/MI - Projeto de Circuitos Digitais/PBL_2/PBL---Cachorro-de-Brinquedo/Projeto-Quartus/mux_4x1.v|
+!i113 0
+o-vlog01compat -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+!s92 -vlog01compat -work work {+incdir+C:/Users/Fredi/OneDrive/Documentos/MI - Projeto de Circuitos Digitais/PBL_2/PBL---Cachorro-de-Brinquedo/Projeto-Quartus} -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R5

@@ -1,5 +1,5 @@
 Flow report for FFJK
-Sun Oct 20 01:52:22 2024
+Mon Oct 21 22:15:17 2024
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -41,15 +41,15 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------------------------------------+
 ; Flow Summary                                                           ;
 +-----------------------+------------------------------------------------+
-; Flow Status           ; Successful - Sun Oct 20 01:52:22 2024          ;
+; Flow Status           ; Successful - Mon Oct 21 22:15:17 2024          ;
 ; Quartus Prime Version ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name         ; FFJK                                           ;
-; Top-level Entity Name ; dis7segdecspd                                  ;
+; Top-level Entity Name ; display                                        ;
 ; Family                ; MAX II                                         ;
 ; Device                ; EPM240T100C5                                   ;
 ; Timing Models         ; Final                                          ;
-; Total logic elements  ; 3 / 240 ( 1 % )                                ;
-; Total pins            ; 7 / 80 ( 9 % )                                 ;
+; Total logic elements  ; 0 / 240 ( 0 % )                                ;
+; Total pins            ; 4 / 80 ( 5 % )                                 ;
 ; Total virtual pins    ; 0                                              ;
 ; UFM blocks            ; 0 / 1 ( 0 % )                                  ;
 +-----------------------+------------------------------------------------+
@@ -60,7 +60,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/20/2024 01:52:11 ;
+; Start date & time ; 10/21/2024 22:15:07 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; FFJK                ;
 +-------------------+---------------------+
@@ -71,7 +71,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------+---------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                       ; Value                           ; Default Value ; Entity Name ; Section Id                        ;
 +---------------------------------------+---------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID                 ; 123598314454456.172939993116200 ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID                 ; 123598314454456.172955970709320 ; --            ; --          ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST       ; Off                             ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST       ; Off                             ; --            ; --          ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST       ; Off                             ; --            ; --          ; eda_board_design_signal_integrity ;
@@ -83,7 +83,7 @@ https://fpgasoftware.intel.com/eula.
 ; MIN_CORE_JUNCTION_TEMP                ; 0                               ; --            ; --          ; --                                ;
 ; POWER_EXT_SUPPLY_VOLTAGE_TO_REGULATOR ; 3.3V                            ; --            ; --          ; --                                ;
 ; PROJECT_OUTPUT_DIRECTORY              ; output_files                    ; --            ; --          ; --                                ;
-; TOP_LEVEL_ENTITY                      ; dis7segdecspd                   ; FFJK          ; --          ; --                                ;
+; TOP_LEVEL_ENTITY                      ; display                         ; FFJK          ; --          ; --                                ;
 +---------------------------------------+---------------------------------+---------------+-------------+-----------------------------------+
 
 
@@ -92,12 +92,12 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:06     ; 1.0                     ; 4717 MB             ; 00:00:08                           ;
-; Fitter               ; 00:00:01     ; 1.0                     ; 5513 MB             ; 00:00:00                           ;
+; Analysis & Synthesis ; 00:00:05     ; 1.0                     ; 4706 MB             ; 00:00:07                           ;
+; Fitter               ; 00:00:01     ; 1.0                     ; 5510 MB             ; 00:00:01                           ;
 ; Assembler            ; 00:00:00     ; 1.0                     ; 4660 MB             ; 00:00:00                           ;
 ; Timing Analyzer      ; 00:00:00     ; 1.0                     ; 4671 MB             ; 00:00:00                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4623 MB             ; 00:00:00                           ;
-; Total                ; 00:00:07     ; --                      ; --                  ; 00:00:08                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4611 MB             ; 00:00:00                           ;
+; Total                ; 00:00:06     ; --                      ; --                  ; 00:00:08                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

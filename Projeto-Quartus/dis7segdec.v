@@ -1,6 +1,6 @@
 module dis7segdec (
     input A, B, C,
-    output F_a, F_b, F_c, F_d, F_e, F_f, F_g, F_p
+    output S_a, S_b, S_c, S_d, S_e, S_f, S_g
 );
 
 	 wire A_not, B_not, C_not;
@@ -9,38 +9,36 @@ module dis7segdec (
 	 not(B_not, B);
 	 not(C_not, C);
 
-    // F = B' + C'
+    // F = B' + C' -> A
 	 
-    or SEG_a (F_a, B_not, C_not);
+    or SEG_a (S_a, B_not, C_not);
 
-    // F = A + B + C
+    // F = A + B + C -> B
     
-    or SEG_b (F_b, A, B, C);
+    or SEG_b (S_b, A, B, C);
 
-    // F = B'
+    // F = B' -> C
 	 
-    not SEG_c (F_c, B);
+    not SEG_c (S_c, B);
 
-    // F = AC'
+    // F = AC'-> D
 
-    and SEG_d (F_d, A, C_not);
+    and SEG_d (S_d, A, C_not);
 
-    // F = B C + A' B' C'
+    // F = B C + A' B' C' -> E
 	 
 	 wire F1, F2;
 	 
 	 and and0 (F1, B, C);
 	 and (F2, A_not, B_not, C_not);
-    or SEG_e (F_e, F1, F2);
+    or SEG_e (S_e, F1, F2);
 
-    // F = A + C
+    // F = A + C -> F
 	 
-    or SEG_f (F_f, A, C);
+    or SEG_f (S_f, A, C);
 
-    // F = B C
+    // F = B C -> G
 	 
-    and SEG_g (F_g, B, C);
-	 
-	 or SEG_p (F_p, 1'b1, A);
+    and SEG_g (S_g, B, C);
 	 
 endmodule

@@ -1,14 +1,104 @@
-|dis7segdecspd
-A => and_ade.IN0
-A => and_cf.IN0
+|display
+Digit1 => Digit1.IN1
+Digit4 => Digit4.IN1
+active_digit <= mux_4x1:mux_digit_inst.out
+active_digit_not <= mux_4x1:mux_digit_inst.out
+
+
+|display|clockdivisor:clkdiv_inst
+clk => clk_out~reg0.CLK
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => count[3].CLK
+clk => count[4].CLK
+reset => clk_out~reg0.ACLR
+reset => count[0].ACLR
+reset => count[1].ACLR
+reset => count[2].ACLR
+reset => count[3].ACLR
+reset => count[4].ACLR
+clk_out <= clk_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|display|mux_4x1_spd:mux_1_inst
+sel => and_gate7.IN1
+sel => and_gate8.IN1
+sel => and_gate9.IN1
+sel => and_gate10.IN1
+sel => and_gate11.IN1
+sel => and_gate12.IN1
+sel => and_gate13.IN1
+sel => and_gate0.IN1
+sel => and_gate1.IN1
+sel => and_gate2.IN1
+sel => and_gate3.IN1
+sel => and_gate4.IN1
+sel => and_gate5.IN1
+sel => and_gate6.IN1
+out[0] <= or_gate0.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= or_gate1.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= or_gate2.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= or_gate3.DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= or_gate4.DB_MAX_OUTPUT_PORT_TYPE
+out[5] <= or_gate5.DB_MAX_OUTPUT_PORT_TYPE
+out[6] <= or_gate6.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|display|mux_4x1_spd:mux_1_inst|dis7segdec:dis_act_inst
+A => SEG_b.IN0
+A => SEG_d.IN0
+A => SEG_f.IN0
+A => WideAnd0.IN0
+B => SEG_b.IN1
+B => and0.IN0
+B => SEG_g.IN0
+B => SEG_a.IN0
+B => WideAnd0.IN1
+B => S_c.DATAIN
+C => SEG_b.IN2
+C => and0.IN1
+C => SEG_f.IN1
+C => SEG_g.IN1
+C => SEG_a.IN1
+C => SEG_d.IN1
+C => WideAnd0.IN2
+S_a <= SEG_a.DB_MAX_OUTPUT_PORT_TYPE
+S_b <= SEG_b.DB_MAX_OUTPUT_PORT_TYPE
+S_c <= B.DB_MAX_OUTPUT_PORT_TYPE
+S_d <= SEG_d.DB_MAX_OUTPUT_PORT_TYPE
+S_e <= SEG_e.DB_MAX_OUTPUT_PORT_TYPE
+S_f <= SEG_f.DB_MAX_OUTPUT_PORT_TYPE
+S_g <= SEG_g.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|display|mux_4x1_spd:mux_1_inst|dis7segdecspd:dis_spd_inst
+A => and_a.IN0
+A => and_d.IN0
+A => and_e.IN0
+A => and_c.IN0
+A => and_f.IN0
 A => and_g.IN0
-B => and_cf.IN1
-B => and_ade.IN1
+B => and_c.IN1
+B => and_f.IN1
+B => and_a.IN1
+B => and_d.IN1
+B => and_e.IN1
 B => and_g.IN1
-F_ade <= and_ade.DB_MAX_OUTPUT_PORT_TYPE
-F_cf <= and_cf.DB_MAX_OUTPUT_PORT_TYPE
-F_b <= <GND>
-F_g <= and_g.DB_MAX_OUTPUT_PORT_TYPE
-F_p <= <VCC>
+S_a <= and_a.DB_MAX_OUTPUT_PORT_TYPE
+S_b <= <GND>
+S_c <= and_c.DB_MAX_OUTPUT_PORT_TYPE
+S_d <= and_d.DB_MAX_OUTPUT_PORT_TYPE
+S_e <= and_e.DB_MAX_OUTPUT_PORT_TYPE
+S_f <= and_f.DB_MAX_OUTPUT_PORT_TYPE
+S_g <= and_g.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|display|mux_4x1:mux_digit_inst
+sel => and_gate1.IN0
+sel => and_gate0.IN0
+in0 => and_gate0.IN1
+in1 => and_gate1.IN1
+out <= or_gate.DB_MAX_OUTPUT_PORT_TYPE
 
 

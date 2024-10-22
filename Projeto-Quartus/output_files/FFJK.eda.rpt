@@ -1,5 +1,5 @@
 EDA Netlist Writer report for FFJK
-Sun Oct 20 01:52:22 2024
+Mon Oct 21 22:15:17 2024
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -37,9 +37,9 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Sun Oct 20 01:52:22 2024 ;
+; EDA Netlist Writer Status ; Successful - Mon Oct 21 22:15:17 2024 ;
 ; Revision Name             ; FFJK                                  ;
-; Top-level Entity Name     ; dis7segdecspd                         ;
+; Top-level Entity Name     ; display                               ;
 ; Family                    ; MAX II                                ;
 ; Simulation Files Creation ; Successful                            ;
 +---------------------------+---------------------------------------+
@@ -66,13 +66,13 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------------------------------+-----------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------+
-; Simulation Generated Files                                                                            ;
-+-------------------------------------------------------------------------------------------------------+
-; Generated Files                                                                                       ;
-+-------------------------------------------------------------------------------------------------------+
-; C:/Users/Fredi/OneDrive/Documentos/MI - Projeto de Circuitos Digitais/PBL_2/simulation/questa/FFJK.vo ;
-+-------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Simulation Generated Files                                                                                                                        ;
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Generated Files                                                                                                                                   ;
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; C:/Users/Fredi/OneDrive/Documentos/MI - Projeto de Circuitos Digitais/PBL_2/PBL---Cachorro-de-Brinquedo/Projeto-Quartus/simulation/questa/FFJK.vo ;
++---------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------+
@@ -81,13 +81,13 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Sun Oct 20 01:52:22 2024
+    Info: Processing started: Mon Oct 21 22:15:17 2024
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off FFJK -c FFJK
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (204019): Generated file FFJK.vo in folder "C:/Users/Fredi/OneDrive/Documentos/MI - Projeto de Circuitos Digitais/PBL_2/simulation/questa/" for EDA simulation tool
+Info (204019): Generated file FFJK.vo in folder "C:/Users/Fredi/OneDrive/Documentos/MI - Projeto de Circuitos Digitais/PBL_2/PBL---Cachorro-de-Brinquedo/Projeto-Quartus/simulation/questa/" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4623 megabytes
-    Info: Processing ended: Sun Oct 20 01:52:22 2024
+    Info: Peak virtual memory: 4611 megabytes
+    Info: Processing ended: Mon Oct 21 22:15:17 2024
     Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:00
 
