@@ -1,0 +1,24 @@
+module tff (
+  input clk,
+  input t,
+  input reset,
+  output reg q
+);
+
+  // Inicialização do valor de q
+  initial begin
+    q = 0;
+  end
+
+  // Lógica do flip-flop T
+  always @(posedge clk or posedge reset) begin
+    if (reset) begin
+      q <= 0; // Reinicialização 
+    end else begin
+      if (t) begin
+        q <= ~q; // Inverte o valor de q se t for 1
+      end 
+    end
+  end
+
+endmodule

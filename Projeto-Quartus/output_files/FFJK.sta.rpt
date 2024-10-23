@@ -1,5 +1,5 @@
 Timing Analyzer report for FFJK
-Tue Oct 22 01:20:26 2024
+Wed Oct 23 01:33:49 2024
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -16,15 +16,25 @@ Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
   8. Recovery Summary
   9. Removal Summary
  10. Minimum Pulse Width Summary
- 11. Clock Transfers
- 12. Report TCCS
- 13. Report RSKM
- 14. Unconstrained Paths Summary
- 15. Unconstrained Input Ports
- 16. Unconstrained Output Ports
- 17. Unconstrained Input Ports
- 18. Unconstrained Output Ports
- 19. Timing Analyzer Messages
+ 11. Setup: 'tff3'
+ 12. Setup: 'tff1'
+ 13. Setup: 'tff2'
+ 14. Setup: 'clk'
+ 15. Hold: 'clk'
+ 16. Hold: 'tff2'
+ 17. Hold: 'tff1'
+ 18. Hold: 'tff3'
+ 19. Setup Transfers
+ 20. Hold Transfers
+ 21. Report TCCS
+ 22. Report RSKM
+ 23. Unconstrained Paths Summary
+ 24. Clock Status Summary
+ 25. Unconstrained Input Ports
+ 26. Unconstrained Output Ports
+ 27. Unconstrained Input Ports
+ 28. Unconstrained Output Ports
+ 29. Timing Analyzer Messages
 
 
 
@@ -78,28 +88,50 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-----------
-; Clocks ;
-----------
-No clocks to report.
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                           ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets  ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------+
+; clk        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk }  ;
+; tff1       ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { tff1 } ;
+; tff2       ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { tff2 } ;
+; tff3       ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { tff3 } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------+
 
 
-----------------
-; Fmax Summary ;
-----------------
-No paths to report.
++-------------------------------------------------+
+; Fmax Summary                                    ;
++-----------+-----------------+------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
++-----------+-----------------+------------+------+
+; 456.0 MHz ; 456.0 MHz       ; tff3       ;      ;
++-----------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
------------------
-; Setup Summary ;
------------------
-No paths to report.
++--------------------------------+
+; Setup Summary                  ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; tff3  ; -1.193 ; -1.193        ;
+; tff1  ; 0.466  ; 0.000         ;
+; tff2  ; 0.833  ; 0.000         ;
+; clk   ; 1.616  ; 0.000         ;
++-------+--------+---------------+
 
 
-----------------
-; Hold Summary ;
-----------------
-No paths to report.
++--------------------------------+
+; Hold Summary                   ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -1.670 ; -1.670        ;
+; tff2  ; -0.887 ; -0.887        ;
+; tff1  ; -0.520 ; -0.520        ;
+; tff3  ; 1.639  ; 0.000         ;
++-------+--------+---------------+
 
 
 --------------------
@@ -114,16 +146,120 @@ No paths to report.
 No paths to report.
 
 
--------------------------------
-; Minimum Pulse Width Summary ;
--------------------------------
-No paths to report.
++--------------------------------+
+; Minimum Pulse Width Summary    ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -2.289 ; -2.289        ;
+; tff1  ; 0.234  ; 0.000         ;
+; tff2  ; 0.234  ; 0.000         ;
+; tff3  ; 0.234  ; 0.000         ;
++-------+--------+---------------+
 
 
--------------------
-; Clock Transfers ;
--------------------
-Nothing to report.
++----------------------------------------------------------------------------------------------------+
+; Setup: 'tff3'                                                                                      ;
++--------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; -1.193 ; tff4      ; tff4    ; tff3         ; tff3        ; 1.000        ; 0.000      ; 1.860      ;
++--------+-----------+---------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Setup: 'tff1'                                                                                     ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; 0.466 ; tff2      ; tff2    ; tff2         ; tff1        ; 0.500        ; 1.784      ; 1.861      ;
+; 0.966 ; tff2      ; tff2    ; tff2         ; tff1        ; 1.000        ; 1.784      ; 1.861      ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Setup: 'tff2'                                                                                     ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; 0.833 ; tff3      ; tff3    ; tff3         ; tff2        ; 0.500        ; 2.169      ; 1.879      ;
+; 1.333 ; tff3      ; tff3    ; tff3         ; tff2        ; 1.000        ; 2.169      ; 1.879      ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Setup: 'clk'                                                                                      ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; 1.616 ; tff1      ; tff1    ; tff1         ; clk         ; 0.500        ; 3.211      ; 2.138      ;
+; 2.116 ; tff1      ; tff1    ; tff1         ; clk         ; 1.000        ; 3.211      ; 2.138      ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Hold: 'clk'                                                                                        ;
++--------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; -1.670 ; tff1      ; tff1    ; tff1         ; clk         ; 0.000        ; 3.211      ; 2.138      ;
+; -1.170 ; tff1      ; tff1    ; tff1         ; clk         ; -0.500       ; 3.211      ; 2.138      ;
++--------+-----------+---------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Hold: 'tff2'                                                                                       ;
++--------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; -0.887 ; tff3      ; tff3    ; tff3         ; tff2        ; 0.000        ; 2.169      ; 1.879      ;
+; -0.387 ; tff3      ; tff3    ; tff3         ; tff2        ; -0.500       ; 2.169      ; 1.879      ;
++--------+-----------+---------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Hold: 'tff1'                                                                                       ;
++--------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; -0.520 ; tff2      ; tff2    ; tff2         ; tff1        ; 0.000        ; 1.784      ; 1.861      ;
+; -0.020 ; tff2      ; tff2    ; tff2         ; tff1        ; -0.500       ; 1.784      ; 1.861      ;
++--------+-----------+---------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Hold: 'tff3'                                                                                      ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+; 1.639 ; tff4      ; tff4    ; tff3         ; tff3        ; 0.000        ; 0.000      ; 1.860      ;
++-------+-----------+---------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; tff1       ; clk      ; 1        ; 1        ; 0        ; 0        ;
+; tff2       ; tff1     ; 1        ; 1        ; 0        ; 0        ;
+; tff3       ; tff2     ; 1        ; 1        ; 0        ; 0        ;
+; tff3       ; tff3     ; 1        ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; tff1       ; clk      ; 1        ; 1        ; 0        ; 0        ;
+; tff2       ; tff1     ; 1        ; 1        ; 0        ; 0        ;
+; tff3       ; tff2     ; 1        ; 1        ; 0        ; 0        ;
+; tff3       ; tff3     ; 1        ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
 
 ---------------
@@ -146,29 +282,22 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
 ; Unconstrained Input Ports       ; 1     ; 1    ;
-; Unconstrained Input Port Paths  ; 2     ; 2    ;
-; Unconstrained Output Ports      ; 2     ; 2    ;
-; Unconstrained Output Port Paths ; 2     ; 2    ;
+; Unconstrained Input Port Paths  ; 4     ; 4    ;
+; Unconstrained Output Ports      ; 1     ; 1    ;
+; Unconstrained Output Port Paths ; 1     ; 1    ;
 +---------------------------------+-------+------+
 
 
-+---------------------------------------------------------------------------------------------------+
-; Unconstrained Input Ports                                                                         ;
-+------------+--------------------------------------------------------------------------------------+
-; Input Port ; Comment                                                                              ;
-+------------+--------------------------------------------------------------------------------------+
-; Digit1     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-+------------+--------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------+
-; Unconstrained Output Ports                                                                               ;
-+------------------+---------------------------------------------------------------------------------------+
-; Output Port      ; Comment                                                                               ;
-+------------------+---------------------------------------------------------------------------------------+
-; active_digit     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; active_digit_not ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-+------------------+---------------------------------------------------------------------------------------+
++-------------------------------------+
+; Clock Status Summary                ;
++--------+-------+------+-------------+
+; Target ; Clock ; Type ; Status      ;
++--------+-------+------+-------------+
+; clk    ; clk   ; Base ; Constrained ;
+; tff1   ; tff1  ; Base ; Constrained ;
+; tff2   ; tff2  ; Base ; Constrained ;
+; tff3   ; tff3  ; Base ; Constrained ;
++--------+-------+------+-------------+
 
 
 +---------------------------------------------------------------------------------------------------+
@@ -176,18 +305,35 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +------------+--------------------------------------------------------------------------------------+
 ; Input Port ; Comment                                                                              ;
 +------------+--------------------------------------------------------------------------------------+
-; Digit1     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; t          ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 +------------+--------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------+
-; Unconstrained Output Ports                                                                               ;
-+------------------+---------------------------------------------------------------------------------------+
-; Output Port      ; Comment                                                                               ;
-+------------------+---------------------------------------------------------------------------------------+
-; active_digit     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; active_digit_not ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-+------------------+---------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; clk_out     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; t          ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; clk_out     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
 
 
 +--------------------------+
@@ -196,7 +342,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Tue Oct 22 01:20:25 2024
+    Info: Processing started: Wed Oct 23 01:33:48 2024
 Info: Command: quartus_sta FFJK -c FFJK
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -207,23 +353,43 @@ Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'FFJK.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
-Info (332096): The command derive_clocks did not find any clocks to derive.  No clocks were created or changed.
-Warning (332068): No clocks defined in design.
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name tff3 tff3
+    Info (332105): create_clock -period 1.000 -name tff2 tff2
+    Info (332105): create_clock -period 1.000 -name tff1 tff1
+    Info (332105): create_clock -period 1.000 -name clk clk
 Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
-Info (332159): No clocks to report
-Info (332140): No fmax paths to report
 Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
-Info (332140): No Setup paths to report
-Info (332140): No Hold paths to report
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -1.193
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -1.193              -1.193 tff3 
+    Info (332119):     0.466               0.000 tff1 
+    Info (332119):     0.833               0.000 tff2 
+    Info (332119):     1.616               0.000 clk 
+Info (332146): Worst-case hold slack is -1.670
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -1.670              -1.670 clk 
+    Info (332119):    -0.887              -0.887 tff2 
+    Info (332119):    -0.520              -0.520 tff1 
+    Info (332119):     1.639               0.000 tff3 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332140): No Minimum Pulse Width paths to report
+Info (332146): Worst-case minimum pulse width slack is -2.289
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.289              -2.289 clk 
+    Info (332119):     0.234               0.000 tff1 
+    Info (332119):     0.234               0.000 tff2 
+    Info (332119):     0.234               0.000 tff3 
 Info (332001): The selected device family is not supported by the report_metastability command.
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 3 warnings
     Info: Peak virtual memory: 4671 megabytes
-    Info: Processing ended: Tue Oct 22 01:20:26 2024
+    Info: Processing ended: Wed Oct 23 01:33:49 2024
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:00
 

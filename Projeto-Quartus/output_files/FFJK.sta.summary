@@ -2,4 +2,52 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
+Type  : Setup 'tff3'
+Slack : -1.193
+TNS   : -1.193
+
+Type  : Setup 'tff1'
+Slack : 0.466
+TNS   : 0.000
+
+Type  : Setup 'tff2'
+Slack : 0.833
+TNS   : 0.000
+
+Type  : Setup 'clk'
+Slack : 1.616
+TNS   : 0.000
+
+Type  : Hold 'clk'
+Slack : -1.670
+TNS   : -1.670
+
+Type  : Hold 'tff2'
+Slack : -0.887
+TNS   : -0.887
+
+Type  : Hold 'tff1'
+Slack : -0.520
+TNS   : -0.520
+
+Type  : Hold 'tff3'
+Slack : 1.639
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'clk'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'tff1'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'tff2'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'tff3'
+Slack : 0.234
+TNS   : 0.000
+
 ------------------------------------------------------------

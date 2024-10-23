@@ -1,11 +1,11 @@
-Fitter Status : Successful - Tue Oct 22 01:20:23 2024
+Fitter Status : Successful - Wed Oct 23 01:33:46 2024
 Quartus Prime Version : 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 Revision Name : FFJK
-Top-level Entity Name : display
+Top-level Entity Name : clockdivisor
 Family : MAX II
 Device : EPM240T100C5
 Timing Models : Final
-Total logic elements : 0 / 240 ( 0 % )
-Total pins : 4 / 80 ( 5 % )
+Total logic elements : 4 / 240 ( 2 % )
+Total pins : 3 / 80 ( 4 % )
 Total virtual pins : 0
 UFM blocks : 0 / 1 ( 0 % )

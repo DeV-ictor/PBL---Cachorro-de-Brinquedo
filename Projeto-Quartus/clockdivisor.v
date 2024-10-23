@@ -1,23 +1,39 @@
 module clockdivisor (
-    input clk,
-    input reset,
-    output reg clk_out
+  input clk,
+  output clk_out
 );
 
-    reg [4:0] count;  // 5 bits para contar até 19 (2^5 = 32)
+	wire q1, q2, q3;
 
-    always @(posedge clk or posedge reset) begin
-        if (reset) begin
-            count <= 5'b0;
-            clk_out <= 1'b0;
-        end else begin
-            if (count == 19'd18) begin  // Verifica se o contador chegou a 18
-                count <= 5'b0;
-                clk_out <= ~clk_out; // Inverte a saída do clock
-            end else begin
-                count <= count + 1'b1;
-            end
-        end
-    end
+  // Instância dos flip-flops tipo T
+  tff tff1 (
+    .clk(clk),
+    .j(1'b1),
+	 .k(1'b1),
+    .q(q1)
+  );
+  
+  tff tff2 (
+    .clk(q1),
+    .j(1'b1),
+	 .k(1'b1),
+    .q(q2)
+  );
+  
+  tff tff3 (
+    .clk(q2),
+    .j(1'b1),
+	 .k(1'b1),
+    .q(q3)
+  );
+  
+  tff tff4 (
+    .clk(q3),
+    .j(1'b1),
+	 .k(1'b1),
+    .q(clk_out)
+  );
+
+  // Saída do divisor de clock (invertida após 16 clocks)
 
 endmodule
